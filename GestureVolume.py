@@ -65,10 +65,10 @@ def main():
                 volBar = np.interp(length, [min_length, max_length], [400, 150])
                 volPer = np.interp(length, [min_length, max_length], [0, 100])
 
-                cv2.circle(img, (x1, y1), 10, (255, 0, 0), cv2.FILLED)
-                cv2.circle(img, (x2, y2), 10, (255, 0, 0), cv2.FILLED)
-                cv2.circle(img, (m1, m2), 10, (255, 0, 0), cv2.FILLED)
-                cv2.line(img, (x1, y1), (x2, y2), (255, 0, 0), 2)
+                cv2.circle(img, (x1, y1), 10, (194, 113, 25), cv2.FILLED)
+                cv2.circle(img, (x2, y2), 10, (194, 113, 25), cv2.FILLED)
+                cv2.circle(img, (m1, m2), 10, (194, 113, 25), cv2.FILLED)
+                cv2.line(img, (x1, y1), (x2, y2), (194, 113, 25), 2)
                 volume.SetMasterVolumeLevel(vol, None)
             else:
                 print("Do nothing")
@@ -79,10 +79,10 @@ def main():
         pTime = cTime
         #add fps
         cv2.putText(img, "FPS: " + str(int(fps)), (10, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, (47, 158, 68), 3)
-        cv2.putText(img, f'Volume: {int(volPer)}%', (30, 450), cv2.FONT_HERSHEY_SIMPLEX, 1, (255,0, 0), 3)
-        cv2.rectangle(img, (50, 150), (85, 400), (255, 0, 0), 3)
-        cv2.rectangle(img, (50, int(volBar)), (85, 400), (255, 0, 0), cv2.FILLED)
-
+        cv2.putText(img, f'Volume: {int(volPer)}%', (30, 450), cv2.FONT_HERSHEY_SIMPLEX, 1, (194, 113, 25), 3)
+        cv2.rectangle(img, (50, 150), (85, 400), (194, 113, 25), 3)
+        cv2.rectangle(img, (50, int(volBar)), (85, 400), (194, 113, 25), cv2.FILLED)
+        # BGR -> RGB
         #render video
         cv2.imshow('Hand Tracking', img)
         if cv2.waitKey(1) & 0xFF == ord('q'):
